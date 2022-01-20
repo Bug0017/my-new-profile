@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: sure-italic;
+  src: url(assets/fonts/OperatorMonoLig-MediumItalic.otf) format("opentype");
+}
+
+@font-face {
+  font-family: sure;
+  src: url(assets/fonts/OperatorMonoLig-Medium.otf) format("opentype");
+}
+
+:root {
+  --default-font-family: "sure";
+  --default-font-family-i: "sure-italic";
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: var(--default-font-family-i);
+}
