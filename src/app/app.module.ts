@@ -1,3 +1,4 @@
+import { AppFeaturesModule } from './features/features.module';
 import { AppStateModule } from './state/app-state.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -11,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NzResizableModule } from 'ng-zorro-antd/resizable';
+
 registerLocaleData(en);
 
 @NgModule({
@@ -23,6 +25,7 @@ registerLocaleData(en);
     AppRoutingModule,
     AppStateModule,
     NzResizableModule,
+    AppFeaturesModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent],
