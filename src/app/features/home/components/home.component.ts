@@ -1,11 +1,10 @@
-import { fetchHeroes } from './../../state/home/home.actions';
+import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { homeEnter, fetchHeroes } from 'src/app/state/home/home.actions';
 import {
   selectHeroes,
   selectIsLoading,
-} from './../../state/home/home.selectors';
-import { Component, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { homeEnter } from 'src/app/state/home/home.actions';
+} from 'src/app/state/home/home.selectors';
 
 @Component({
   selector: 'app-home-page',

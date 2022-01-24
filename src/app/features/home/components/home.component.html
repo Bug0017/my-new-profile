@@ -23,6 +23,10 @@
         <span> pro ban : {{ hero.pro_ban }} </span>
         <span> pro pick : {{ hero.pro_pick }} </span>
         <span> pro win : {{ hero.pro_win }} </span>
+
+        <button nz-button nzType="primary" [routerLink]="['/hero', hero.id]">
+          Read more
+        </button>
       </div>
     </ng-template>
   </div>

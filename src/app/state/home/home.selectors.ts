@@ -10,3 +10,9 @@ export const selectIsLoading = createSelector(
   selectHome,
   (state: any) => state.isLoading
 );
+
+export const selectHeroById = (id) =>
+  createSelector(selectHeroes, (heroes) => {
+    debugger;
+    return heroes.find((hero) => hero.id === id);
+  });
