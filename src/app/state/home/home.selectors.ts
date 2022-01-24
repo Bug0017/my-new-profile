@@ -5,3 +5,8 @@ export const selectHeroes = createSelector(
   selectHome,
   (state: any) => state.heroes
 );
+
+export const selectIsLoading = createSelector(
+  selectHome,
+  (state: any) => state.isLoading
+);

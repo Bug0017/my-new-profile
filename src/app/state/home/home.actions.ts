@@ -11,5 +11,5 @@ export const fetchHeroesSuccess = createAction(
 
 export const fetchHeroesFailure = createAction(
   HomeActionTypes.FETCH_HEROES_FAILURE,
-  props<{ error: { name: string; message: string } }>()
+  props<{ error }>()
 );

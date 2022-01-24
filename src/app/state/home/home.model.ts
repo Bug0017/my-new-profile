@@ -52,3 +52,5 @@ export interface Hero {
   null_pick: number;
   null_win: 0;
 }
+
+export interface Error {}

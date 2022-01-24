@@ -1,1 +1,29 @@
-<section class="min-h-screen py-6"></section>
+<section class="flex flex-wrap min-h-screen py-6 space-x-6 space-y-6">
+  <div *ngFor="let hero of heroes$ | async" class="first:m-6">
+    <nz-card
+      nzHoverable
+      style="width: 240px"
+      [nzCover]="coverTemplate"
+      [nzLoading]="loading$ | async"
+    >
+      <nz-card-meta
+        [nzAvatar]="avatarTemplate"
+        nzTitle="{{ hero.localized_name }}"
+        [nzDescription]="descriptionTemplate"
+      ></nz-card-meta>
+    </nz-card>
+    <ng-template #coverTemplate>
+      <img alt="example" [src]="baseUrl + hero.img" />
+    </ng-template>
+    <ng-template #avatarTemplate>
+      <img alt="example" [src]="baseUrl + hero.icon" />
+    </ng-template>
+    <ng-template #descriptionTemplate>
+      <div class="flex flex-col justify-end">
+        <span> pro ban : {{ hero.pro_ban }} </span>
+        <span> pro pick : {{ hero.pro_pick }} </span>
+        <span> pro win : {{ hero.pro_win }} </span>
+      </div>
+    </ng-template>
+  </div>
+</section>

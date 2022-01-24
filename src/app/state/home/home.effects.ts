@@ -2,7 +2,7 @@ import { AppHomeService } from './../../features/home/services/home.service';
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import * as HomeActions from './home.actions';
-import { mergeMap, map, EMPTY, catchError } from 'rxjs';
+import { mergeMap, map, catchError, of } from 'rxjs';
 @Injectable()
 export class HeroesEffects {
   constructor(private action$: Actions, private homeService: AppHomeService) {}
@@ -13,7 +13,9 @@ export class HeroesEffects {
       mergeMap(() =>
         this.homeService.fetchHeroes().pipe(
           map((heroes: any) => HomeActions.fetchHeroesSuccess({ heroes })),
-          catchError(() => EMPTY)
+          catchError((error) => {
+            return of(HomeActions.fetchHeroesFailure({ error }));
+          })
         )
       )
     )
