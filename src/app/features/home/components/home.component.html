@@ -1,5 +1,5 @@
 <section class="flex flex-wrap min-h-screen py-6 space-x-6 space-y-6">
-  <div *ngFor="let hero of heroes$ | async" class="first:m-6">
+  <div *ngFor="let hero of filteredHeroes$ | async" class="first:m-6">
     <nz-card
       nzHoverable
       style="width: 240px"
@@ -31,3 +31,12 @@
     </ng-template>
   </div>
 </section>
+<nz-pagination
+  [(nzPageIndex)]="current"
+  [nzTotal]="totalNoOfPages$ | async"
+  [nzSize]="'small'"
+  nzShowSizeChanger
+  nzShowQuickJumper
+  (nzPageIndexChange)="onPageIndexChange($event)"
+  (nzPageSizeChange)="onPageSizeChange($event)"
+></nz-pagination>

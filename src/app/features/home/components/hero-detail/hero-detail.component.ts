@@ -1,6 +1,6 @@
-import { fetchHeroes } from './../../../../state/home/home.actions';
-import { selectHeroById } from './../../../../state/home/home.selectors';
-import { Hero } from './../../../../state/home/home.model';
+import { fetchHeroes } from 'src/app/state/home/home.actions';
+import { selectHeroById } from 'src/app/state/home/home.selectors';
+import { Hero } from 'src/app/state/home/home.model';
 import { Store } from '@ngrx/store';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';

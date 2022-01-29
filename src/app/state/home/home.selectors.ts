@@ -6,6 +6,15 @@ export const selectHeroes = createSelector(
   (state: any) => state.heroes
 );
 
+export const selectHeroesForPagination = (
+  currentPage: number,
+  numberOfItem?: number
+) => {
+  const sliceFirstParam = (currentPage - 1) * numberOfItem;
+  return createSelector(selectHeroes, (heroes) => {
+    return heroes.slice(sliceFirstParam, numberOfItem * currentPage);
+  });
+};
 export const selectIsLoading = createSelector(
   selectHome,
   (state: any) => state.isLoading
