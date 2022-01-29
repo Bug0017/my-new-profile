@@ -10,9 +10,11 @@ export const selectHeroesForPagination = (
   currentPage: number,
   numberOfItem?: number
 ) => {
-  const sliceFirstParam = (currentPage - 1) * numberOfItem;
   return createSelector(selectHeroes, (heroes) => {
-    return heroes.slice(sliceFirstParam, numberOfItem * currentPage);
+    return heroes.slice(
+      (currentPage - 1) * numberOfItem,
+      numberOfItem * currentPage
+    );
   });
 };
 export const selectIsLoading = createSelector(
